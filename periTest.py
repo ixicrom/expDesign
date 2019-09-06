@@ -13,10 +13,11 @@ from peri.viz import plots
 
 im = util.RawImage('/Volumes/PhD/expDesign/2011_DAS_SoftMatter_Data/jtLLF090701_BR090729_NBD_xyz007_x100_z35_K4.tif')
 
-tile = util.Tile([0,312,0],right=[12,512,200])
+tile = util.Tile([5,312,0],right=[12,512,200])
+tile
 small_im = util.RawImage('/Volumes/PhD/expDesign/2011_DAS_SoftMatter_Data/jtLLF090701_BR090729_NBD_xyz007_x100_z35_K4.tif', tile=tile)
 
-particle_positions = np.load('/Volumes/PhD/expDesign/Python/particles1.npy')
+particle_positions = np.load('part_loc_smallSlice.npy')
 particle_radii = 8.0
 particles = objs.PlatonicSpheresCollection(particle_positions, particle_radii)
 # imaginary_slide = objs.Slab(zpos=6)
@@ -63,7 +64,7 @@ point_spread_function = comp.exactpsf.FixedSSChebLinePSF(pxsize=xpixel)
 model = models.ConfocalDyedParticlesModel()
 st = states.ImageState(small_im, [objects, illumination, background, point_spread_function], mdl=model)
 st.update('zscale', zpixel/xpixel)
-st.update('psf-laser-wavelength', .488)
+# st.update('psf-laser-wavelength', .488)
 runner.link_zscale(st)
 
 runner.optimize_from_initial(st)
