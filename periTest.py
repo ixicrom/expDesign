@@ -68,3 +68,4 @@ st.update('zscale', zpixel/xpixel)
 runner.link_zscale(st)
 
 runner.optimize_from_initial(st)
+runner.finish_state(st)
