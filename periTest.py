@@ -11,11 +11,11 @@ from peri import runner
 from peri.viz import plots
 
 
-im = util.RawImage('/Volumes/PhD/expDesign/2011_DAS_SoftMatter_Data/jtLLF090701_BR090729_NBD_xyz007_x100_z35_K4.tif')
+im = util.RawImage('/Volumes/PhD/expDesign/2011_DAS_SoftMatter_Data/jtLLF090701_BR090729_RhB_xyz007_x100_z35_K4.tif')
 
 tile = util.Tile([5,312,0],right=[12,512,200])
 tile
-small_im = util.RawImage('/Volumes/PhD/expDesign/2011_DAS_SoftMatter_Data/jtLLF090701_BR090729_NBD_xyz007_x100_z35_K4.tif', tile=tile)
+small_im = util.RawImage('/Volumes/PhD/expDesign/2011_DAS_SoftMatter_Data/jtLLF090701_BR090729_RhB_xyz007_x100_z35_K4.tif', tile=tile)
 
 particle_positions = np.load('part_loc_smallSlice.npy')
 particle_radii = 8.0
