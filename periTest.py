@@ -57,7 +57,7 @@ zpixel=0.82
 xpixel=35.2/512
 zpixel/xpixel
 
-background = comp.ilms.LegendrePoly2P1D(order=(3,2,2), category='bkg')
+background = comp.ilms.LegendrePoly2P1D(order=(4,2,2), category='bkg')
 illumination = comp.ilms.BarnesStreakLegPoly2P1D(npts=(4, 2, 2))
 offset = comp.GlobalScalar(name='offset', value=0.)
 point_spread_function = comp.exactpsf.FixedSSChebLinePSF(pxsize=xpixel)
