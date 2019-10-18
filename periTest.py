@@ -38,12 +38,12 @@ point_spread_function = comp.exactpsf.FixedSSChebLinePSF(pxsize=xpixel)
 model = models.ConfocalDyedParticlesModel()
 st = states.ImageState(small_im, [objects, illumination, background, point_spread_function], mdl=model)
 st.update('zscale', zscale)
-savefile = "/Volumes/PhD/expDesign/states/"+datetime.now().strftime("%Y%m%d-%H%M%S") + "_unoptimized"
+savefile = "/Volumes/PhD/expDesign/states/Job"+datetime.now().strftime("%Y%m%d-%H%M%S") + "_unoptimized"
 states.save(st,savefile)
 # st.update('psf-laser-wavelength', .488)
 runner.link_zscale(st)
 
 runner.optimize_from_initial(st)
-savefile = "/Volumes/PhD/expDesign/states/"+datetime.now().strftime("%Y%m%d-%H%M%S") + "_inital_optimized"
+savefile = "/Volumes/PhD/expDesign/states/Job"+datetime.now().strftime("%Y%m%d-%H%M%S") + "_inital_optimized"
 states.save(st,savefile)
 runner.finish_state(st)
