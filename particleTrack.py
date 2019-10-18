@@ -20,11 +20,11 @@ f=tp.locate(im_array,diameter=(3,11,11))
 f[f['z']==f['z']]
 f_small = tp.locate(im_array_small,diameter=(3,11,11))
 f_small=f_small[f_small['z']==f_small['z']]
-np.save('part_loc_smallSlice.npy', np.array(f_small[f_small.columns[0:3,]]))
+np.save('part_loc.npy', np.array(f[f.columns[0:3,]]))
 
 # plt.figure()
 # tp.annotate3d(f[f['z']==f['z']],im_array)
-plt.imshow(im_array_small[1,:,:],cmap="gray")
-scatter = plt.scatter(x=f_small["x"],y=f_small["y"], c=f_small["z"],marker="x")
+plt.imshow(im_array[2,:,:],cmap="gray")
+scatter = plt.scatter(x=f["x"],y=f["y"], c=f["z"],marker="x")
 plt.legend(*scatter.legend_elements(), title="z")
 plt.show()
