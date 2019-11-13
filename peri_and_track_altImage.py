@@ -27,7 +27,6 @@ imFile = '/Volumes/PhD/expDesign/Data/David/6-5a.tif'
 # f[f['z']==f['z']]
 # f_small = tp.locate(im_array_small,diameter=(9,9,9))
 # f_small=f_small[f_small['z']==f_small['z']]
-# np.save('part_loc_davidImage.npy', np.array(f[f.columns[0:3,]]))
 # particle_positions = np.array(f_small[f_small.columns[0:3,]])
 
 raw_im = util.RawImage(imFile)
@@ -39,6 +38,7 @@ small_im = util.RawImage(imFile, tile=tile)
 small_im_arr = small_im.get_image()
 f_small = tp.locate(small_im_arr, diameter=(9,9,9))
 particle_positions = np.array(f_small[f_small.columns[0:3,]])
+np.save('part_loc_davidImage.npy', particle_positions)
 
 zpixel=1
 xpixel=1
