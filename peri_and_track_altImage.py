@@ -66,6 +66,6 @@ states.save(st,savefile)
 runner.link_zscale(st)
 
 runner.optimize_from_initial(st)
-savefile = "/Volumes/PhD/expDesign/states/"+datetime.now().strftime("%Y%m%d-%H%M%S") + "_inital_optimized"
+savefile = "/Volumes/PhD/expDesign/states/"+datetime.now().strftime("%Y%m%d-%H%M%S") + "_initial_optimized"
 states.save(st,savefile)
 runner.finish_state(st)
